@@ -1,0 +1,159 @@
+/* Corpo */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://s2-g1.glbimg.com/DmpUU0SgMjz2PTyqqSlqi7JnP_Q=/0x0:1920x1200/1008x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2021/Y/l/ycmRwKTDuAeqIuACgvAA/xpwallpaper.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+/* Container da Previsão do Tempo */
+.Previsão_do_Tempo {
+    background-color: rgba(94, 93, 93, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 2px solid #4b4b4bbd;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+/* Título Principal */
+h1 {
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    font-size: 32px;
+}
+
+/* Formulário */
+form {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Rótulos */
+label {
+    font-weight: bold;
+    margin-right: 10px;
+    color: #ffffff;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* Inputs */
+input {
+    padding: 8px;
+    margin-right: 10px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+}
+
+/* Botão */
+button {
+    padding: 8px 12px;
+    background-color: #1100ff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Título Secundário */
+h2 {
+    text-align: center;
+    margin-top: 20px;
+    color: #ffffff;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    font-size: 24px;
+}
+
+/* Parágrafos */
+p {
+    color: #ffffff;
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 8px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    font-size: 16px;
+}
+
+/* Ícone de carregamento */
+.loader {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top: 4px solid #ffffff;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Ícone de erro */
+.error-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ff0000;
+    font-size: 48px;
+}
+
+/* Mensagem de erro */
+.error-message {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ff0000;
+}
+
+/* Ícone de sucesso */
+.success-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #00ff00;
+    font-size: 48px;
+}
+
+/* Mensagem de sucesso */
+.success-message {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #00ff00;
+}
+
+/* Mensagem de carregamento */
+.loading-message {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ffffff;
+}
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Previsão do Tempo</title>
+        <link ref="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css')}}">
+        <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <!-- Adicione estas linhas para ativar a instalação do PWA -->
+        <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+        <meta name="theme-color" content="#000000">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <link rel="apple-touch-icon" href="{{ url_for('static', filename='icon.png') }}">
+
+        <!-- Adicione esta linha para ativar a instalação do PWA no navegador -->
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='icon.png') }}">
+    </head>
+    <body>
+        <div class="Previsão_do_Tempo">
+            <h1>Previsão do Tempo</h1>
+            <form method="post">
+                <label for="cidade">Digite o nome da cidade:</label>
+                <input type="text" name="cidade" id="cidade" required>
+                <button type="submit">Obter Previsão</button>
+            </form>
+    
+            {% if previsao %}
+                <h2>Previsão para {{ previsao.cidade }}</h2>
+                <p>Descrição: {{ previsao.descricao }}</p>
+                <p>Temperatura: {{ previsao.temperatura }} °C</p>
+                <p>Umidade: {{ previsao.umidade }}%</p>
+            {% elif cidade %}
+                <p>Não foi possível obter a previsão para {{ cidade }}.</p>
+            {% endif %}
+        </div>
+        <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/static/sw.js')
+            .then((registration) => {
+                console.log('Service worker registrado com sucesso:' , registration);
+            })
+            .catch((error) => {
+                console.log('Erro ao registrar Service Worker:', error);
+
+            });
+        }
+        </script>
+    </body>
+</html>
